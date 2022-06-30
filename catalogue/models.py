@@ -3,8 +3,7 @@ from django.db import models
 class ProductType(models.Model):
     titel = models.CharField(max_length=50)
     description = models.TextField(blank=True, null=True)
-   # create_time = models.TimeField(auto_now_add=True)
-   # modified_time = models.TimeField(auto_now=True)
+
 
     class Meta:
         verbose_name = 'ProductType'
