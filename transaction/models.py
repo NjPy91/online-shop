@@ -14,7 +14,17 @@ class Transaction(models.Model):
         choices=TRANSACTION_TYPE_CHOICES, default=CHARGE
     )
     amount = models.BigIntegerField()
-    create_time = models.DateField(auto_now_add=True)
+    created_time = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.user}-{self.get_transaction_type_display()}-{self.amount}"
+
+
+
+class UserBalance(models.Model):
+    user = models.ForeignKey(User, related_name='balance_records', on_delete=models.RESTRICT)
+    balance =models.BigIntegerField()
+    created_time = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user} - {self.balance} - {self.created_time}"
