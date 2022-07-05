@@ -1,5 +1,8 @@
 from django.db import models
 
+
+
+
 class ProductType(models.Model):
     titel = models.CharField(max_length=50)
     description = models.TextField(blank=True, null=True)

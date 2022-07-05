@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'catalogue.apps.CatalogueConfig',
+    'transaction.apps.TransactionConfig',
+    
 
 ]
 
